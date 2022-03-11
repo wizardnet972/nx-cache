@@ -1,0 +1,34 @@
+{
+  "root": "libs/libb-api",
+  "sourceRoot": "libs/libb-api/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/libb-api",
+        "tsConfig": "libs/libb-api/tsconfig.lib.json",
+        "packageJson": "libs/libb-api/package.json",
+        "main": "libs/libb-api/src/index.ts",
+        "assets": ["libs/libb-api/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/libb-api/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/libb-api"],
+      "options": {
+        "jestConfig": "libs/libb-api/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

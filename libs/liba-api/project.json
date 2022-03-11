@@ -1,0 +1,34 @@
+{
+  "root": "libs/liba-api",
+  "sourceRoot": "libs/liba-api/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/liba-api",
+        "tsConfig": "libs/liba-api/tsconfig.lib.json",
+        "packageJson": "libs/liba-api/package.json",
+        "main": "libs/liba-api/src/index.ts",
+        "assets": ["libs/liba-api/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/liba-api/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/liba-api"],
+      "options": {
+        "jestConfig": "libs/liba-api/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

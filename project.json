@@ -1,0 +1,14 @@
+{
+  "root": ".",
+  "targets": {
+    "release": {
+      "executor": "@nrwl/workspace:run-commands",
+      "options": {
+        "color": true,
+        "commands": [
+          "nx run-many --target=build --projects={args.name} --parallel"
+        ]
+      }
+    }
+  }
+}

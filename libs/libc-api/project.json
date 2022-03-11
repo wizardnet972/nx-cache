@@ -1,0 +1,34 @@
+{
+  "root": "libs/libc-api",
+  "sourceRoot": "libs/libc-api/src",
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nrwl/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/libc-api",
+        "tsConfig": "libs/libc-api/tsconfig.lib.json",
+        "packageJson": "libs/libc-api/package.json",
+        "main": "libs/libc-api/src/index.ts",
+        "assets": ["libs/libc-api/*.md"]
+      }
+    },
+    "lint": {
+      "executor": "@nrwl/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/libc-api/**/*.ts"]
+      }
+    },
+    "test": {
+      "executor": "@nrwl/jest:jest",
+      "outputs": ["coverage/libs/libc-api"],
+      "options": {
+        "jestConfig": "libs/libc-api/jest.config.js",
+        "passWithNoTests": true
+      }
+    }
+  },
+  "tags": []
+}

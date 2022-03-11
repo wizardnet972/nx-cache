@@ -1,4 +1,10 @@
 {
   "version": 2,
-  "projects": {}
+  "projects": {
+    "liba-api": "libs/liba-api",
+    "libb-api": "libs/libb-api",
+    "libc-api": "libs/libc-api",
+    "nx-app": "apps/nx-app",
+    "workspace": "."
+  }
 }
